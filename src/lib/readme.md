@@ -1,0 +1,1 @@
+Esta pasta contém fachadas para as várias bibliotecas diferentes que você usa em seu projeto.

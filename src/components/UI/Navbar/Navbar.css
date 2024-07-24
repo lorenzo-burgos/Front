@@ -1,0 +1,93 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #1f7f8a, #449a7e);
+    border: 2px solid gray;
+    border-radius: 7px;
+    margin: 3px;
+    height: 32px;
+}
+
+@media (min-width: 600px) and (max-width: 1079px) {
+    .Header {
+        margin: 5px;
+    }
+}
+
+@media (min-width: 1080px) {
+    .Header {
+        margin: 10px;
+    }
+}
+
+.AppHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Left-options {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: linear-gradient(to right, #276167, #1f7f8a);
+    /*clip-path: polygon(70% 0, 0 0, 0 100%, 100% 100%);*/
+    width: 25%;
+    padding-left: 10px;
+    border-radius: 5px 0 0 5px;
+    z-index: 2;
+}
+
+.Right-options {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: linear-gradient(to right, #449a7e, #83c86a);
+    /*clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%); */
+    width: 25%;
+    padding-right: 10px;
+    border-radius: 0 5px 5px 0;
+    z-index: 2;
+}
+
+.App-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px; 
+}
+
+.App-nav li {
+    display: flex;
+    align-items: center;
+}
+
+.App-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (min-width: 600px) {
+    .App-nav ul {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 599px) {
+    .App-nav ul {
+        flex-direction: column;
+    }
+}
