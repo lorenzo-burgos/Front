@@ -1,0 +1,72 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(39, 97, 103, 0.6),  rgba(31,127,138,0.6), rgba(68, 154, 126, 0.6), rgba(131,200,106,0.6));
+    border-bottom: 2px solid rgba(206, 206, 206, 0.25);
+    padding: 0.6rem;
+}
+
+.AppHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Logo {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 3px;
+}
+
+.NavOptions{
+    height: 32px;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.AppNav  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px; 
+}
+
+.AppNav  li {
+    display: flex;
+    align-items: center;
+}
+
+.AppNav a, .option {
+    text-decoration: none;
+    color: rgb(7, 70, 7);
+    padding: 4px 6px;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 0.3rem;
+}
+
+.AppNav  a:hover, .option:hover {
+    background-color: rgba(88, 88, 88, 0.045);
+    color: rgb(5, 107, 5);
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

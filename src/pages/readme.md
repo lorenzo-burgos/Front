@@ -1,0 +1,1 @@
+Essa pasta deve conter uma pasta para cada página da sua aplicação. Dentro dessas pastas específicas de página, deve haver um único arquivo raiz que é a sua página (geralmente index.js) juntamente com todos os arquivos que são aplicáveis apenas a essa página.

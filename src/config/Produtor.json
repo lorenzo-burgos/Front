@@ -1,0 +1,30 @@
+{
+    "produtorOptions": {
+        "pecuaria": {
+            "opcoes": [
+                "Gado de corte",
+                "Gado Leiteiro",
+                "Suínos"
+
+            ]
+        },
+        "cultura": {
+            "opcoes": [
+                "Cultivo de grãos",
+                "Fruticultura"
+            ]
+        },
+        "agricultor": {
+            "opcoes": [
+                "Op1",
+                "Op2"
+            ]       
+        },
+        "fazendas": {
+            "opcoes": [
+                "Op1",
+                "Op2"
+            ] 
+        }
+    }
+}
