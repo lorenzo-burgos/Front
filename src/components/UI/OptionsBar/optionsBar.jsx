@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Produtor from '../../../config/Produtor.json';
 import SubOptionsBox from './subOptionBox';
+import { Box, Typography} from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';          
-import styles from '../../../assets/styles/Navbar.module.css';
-import OptionsBarStyles from '../../../assets/styles/OptionsBar.module.css';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ToggleIcon from '../../../utils/ToggleIcon';
 
 function OptionsBar() {
@@ -19,13 +18,20 @@ function OptionsBar() {
 
     return (
         <>
-            <div className={`${styles.Header} ${OptionsBarStyles.SubHeader}`}>
+            <Box className="Header SubHeader">
                 {mainKeys.map(key => (
-                    <div key={key} className={OptionsBarStyles.SubOptions} onClick={() => toggleActive(key)}>
-                        <span>{key} <ToggleIcon isDown={activeKey === key} IconUp={ArrowDropUpIcon} IconDown={ArrowDropDownIcon}/></span>
-                    </div>
+                    <Box key={key} className="SubOptions" onClick={() => toggleActive(key)}>
+                        <Typography className="TextWithIcon">
+                            {key} <ToggleIcon
+                                isDown={activeKey === key}
+                                IconUp={ArrowDropDownIcon}
+                                IconDown={ArrowDropUpIcon}
+                                className="Icon"
+                            />
+                        </Typography>
+                    </Box>
                 ))}
-            </div>
+            </Box>
             {activeKey && typeof produtorOptions[activeKey] === 'object' && produtorOptions[activeKey].opcoes && (
                 <SubOptionsBox options={produtorOptions[activeKey].opcoes} />
             )}

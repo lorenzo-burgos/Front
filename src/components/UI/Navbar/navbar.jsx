@@ -1,38 +1,54 @@
 import { useState } from 'react';
-import styles from '../../../assets/styles/Navbar.module.css';
-import ToggleIcon from '../../../utils/ToggleIcon';
+import { Box, Button, List, ListItem, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import OptionsBar from '../OptionsBar/optionsBar';
+import useStyles from '../../../assets/styles/styles';
 
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
+    const classes = useStyles();
 
     const toggleActive = () => {
         setIsActive(!isActive);
-    }
+    };
 
     return (
         <>
-            <div className={styles.Header}>
-                <header className={styles.AppHeader}>
-                    <div className={styles.Logo}>
-                        <img src="earth-logo.png" alt="Earth Logo" />
-                    </div>
-                    <div className={styles.NavOptions}>
-                        <nav className={styles.AppNav}>
-                            <ul className={isActive ? styles.active : ''}>
-                                <li className={styles.navOption}>
-                                    <div className={styles.option} onClick={toggleActive}>
-                                        Produtores <ToggleIcon isDown={isActive} IconUp={ArrowDropUpIcon} IconDown={ArrowDropDownIcon}/>
-                                    </div>
-                                </li>
-                                <li className={styles.navOption}><a href="#home">Home</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
+            <Box component="header" className={classes.backgroundColor + " flex items-center justify-between p-2"}>
+                <Box className="flex items-center">
+                    <img
+                        src="earth-logo.png"
+                        alt="Earth Logo"
+                        className="h-6"
+                    />
+                </Box>
+                <Box className="flex items-center">
+                    <List className="flex flex-row p-0 m-0 list-none">
+                        <ListItem className="m-0">
+                            <Button
+                                onClick={toggleActive}
+                                endIcon={isActive ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+                                className={classes.primaryBtn} // Aplica o estilo primário
+                            >
+                                <Typography variant="button" className={classes.text}>
+                                    Produtores
+                                </Typography>
+                            </Button>
+                        </ListItem>
+                        <ListItem className="m-0">
+                            <Button
+                                href="#home"
+                                className={classes.primaryBtn} // Aplica o estilo primário
+                            >
+                                <Typography variant="button" className={classes.text}>
+                                    Home
+                                </Typography>
+                            </Button>
+                        </ListItem>
+                    </List>
+                </Box>
+            </Box>
             {isActive && <OptionsBar />}
         </>
     );

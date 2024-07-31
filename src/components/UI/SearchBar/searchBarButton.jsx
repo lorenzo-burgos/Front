@@ -27,7 +27,7 @@ function SearchBarBtn({ onClick }) {
                 bgcolor: '#D8CEB9',
             }}
         >
-            <ToggleIcon isDown={isActive} IconUp={ZoomOutSharpIcon} IconDown={ZoomInSharpIcon} />
+            <ToggleIcon isDown={isActive} IconUp={ZoomOutSharpIcon} IconDown={ZoomInSharpIcon} style={{paddingLeft: "10px"}}/>
         </Box>
     );
 }
