@@ -1,15 +1,19 @@
 import Footer from './components/footer';
 import Navbar from './components/UI/Navbar/navbar';
 import SearchBar from './components/UI/SearchBar/searchBar';
-import './assets/styles/global.css';
+import theme from './assets/styles/styles';
+import { ThemeProvider } from '@mui/material/styles';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar className="Navbar" />
-      <SearchBar />
-      <Footer className="Footer" />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Navbar className="Navbar" />
+        <SearchBar />
+        <Footer className="Footer" />
+      </div>
+    </ThemeProvider>
   );
 }
 

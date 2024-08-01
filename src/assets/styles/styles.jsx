@@ -1,57 +1,55 @@
-import React from 'react';
-import { makeStyles } from '@mui/styles';
+import { createTheme } from '@mui/material/styles';
+import {
+    primaryColor,
+    primaryHighlight,
+    backgroundColor,
+    secondaryColor,
+    secondaryHighlight,
+    textColor,
+    textHighlightColor,
+    fontTitle,
+    fontText,
+    shadow,
+} from '../../utils/themeUtils';
 
-const getCSSVariable = (variableName) => {
-  return getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
-};
-
-const primaryColor = getCSSVariable('--color-primary');
-const primaryHighlight = getCSSVariable('--color-primary-highlight');
-const secondaryColor = getCSSVariable('--color-secondary');
-const secondaryHighlight = getCSSVariable('--color-secondary-highlight');
-const backgroundColor = getCSSVariable('--color-background');
-const textColor = getCSSVariable('--color-text');
-const textHighlightColor = getCSSVariable('--color-text-highlight');
-const fontTitle = getCSSVariable('--font-title');
-const fontText = getCSSVariable('--font-text');
-const shadow = getCSSVariable('--shadow');
-
-const useStyles = makeStyles({
-    backgroundColor: {
-        backgroundColor: backgroundColor,
-    },
-    primaryBtn: {
-        backgroundColor: primaryColor,
-        border: `1px solid ${primaryColor}`,
-        color: textColor,
-        padding: '8px 16px',
-        cursor: 'pointer',
-        fontFamily: fontTitle,
-        '&:hover': {
-            backgroundColor: primaryHighlight,
-            color: textHighlightColor,
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: primaryColor,
+            light: primaryHighlight,
+        },
+        secondary: {
+            main: secondaryColor,
+            light: secondaryHighlight,
+        },
+        background: {
+            default: backgroundColor,
+        },
+        text: {
+            primary: textColor,
+            secondary: textHighlightColor,
         },
     },
-    secondaryBtn: {
-        backgroundColor: secondaryColor,
-        border: `1px solid ${secondaryColor}`,
-        color: textColor,
-        padding: '8px 16px',
-        cursor: 'pointer',
-        fontFamily: fontTitle,
-        '&:hover': {
-            backgroundColor: secondaryHighlight,
-            color: textHighlightColor,
+    typography: {
+        h1: {
+            fontSize: "3rem",
+            fontWeight: 600,
+            fontFamily: fontTitle,
         },
-    },
-    text:{
-        color: textColor,
-        fontFamily: fontText,
-    },
-    title:{
-        color: textColor,
-        fontFamily: fontTitle,
+        h2: {
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            fontFamily: fontTitle,
+        },
+        h3: {
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            fontFamily: fontTitle,
+        },
+        body1: {
+            fontFamily: fontText,
+        },
     },
 });
-
-export default useStyles;
+  
+  export default theme;

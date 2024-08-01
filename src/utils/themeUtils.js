@@ -1,0 +1,12 @@
+export const primaryColor = "#416435";
+export const primaryHighlight = "#83c86a";
+export const backgroundColor = "#e1e2e3";
+export const greyColor = "#343434";
+export const greyLightColor = "#696669";
+export const secondaryColor = "#1a3b5c";
+export const secondaryHighlight = "#15a6b7";
+export const textColor = "#0b0c0d";
+export const textHighlightColor = "#141414";
+export const fontTitle = "'Chivo', sans-serif";
+export const fontText = "'Roboto', sans-serif";
+export const shadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";

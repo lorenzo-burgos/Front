@@ -3,11 +3,11 @@ import { Box, Button, List, ListItem, Typography } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import OptionsBar from '../OptionsBar/optionsBar';
-import useStyles from '../../../assets/styles/styles';
+import { useTheme } from '@mui/material/styles';
 
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
-    const classes = useStyles();
+    const theme = useTheme();
 
     const toggleActive = () => {
         setIsActive(!isActive);
@@ -15,7 +15,7 @@ function Navbar() {
 
     return (
         <>
-            <Box component="header" className={classes.backgroundColor + " flex items-center justify-between p-2"}>
+            <Box component="header" className={" flex items-center justify-between p-2"} sx={{backgroundColor: theme.palette.background.default,}}>
                 <Box className="flex items-center">
                     <img
                         src="earth-logo.png"
@@ -27,11 +27,12 @@ function Navbar() {
                     <List className="flex flex-row p-0 m-0 list-none">
                         <ListItem className="m-0">
                             <Button
+                                variant="contained" 
+                                color="primary"
                                 onClick={toggleActive}
                                 endIcon={isActive ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                                className={classes.primaryBtn} // Aplica o estilo primário
                             >
-                                <Typography variant="button" className={classes.text}>
+                                <Typography variant="button">
                                     Produtores
                                 </Typography>
                             </Button>
@@ -39,9 +40,8 @@ function Navbar() {
                         <ListItem className="m-0">
                             <Button
                                 href="#home"
-                                className={classes.primaryBtn} // Aplica o estilo primário
                             >
-                                <Typography variant="button" className={classes.text}>
+                                <Typography variant="button" >
                                     Home
                                 </Typography>
                             </Button>
