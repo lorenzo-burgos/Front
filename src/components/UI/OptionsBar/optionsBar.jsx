@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Produtor from '../../../config/Produtor.json';
 import SubOptionsBox from './subOptionBox';
-import { Box, Typography} from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ToggleIcon from '../../../utils/ToggleIcon';
+import PrimaryBtn from '../Buttons/PrimaryBtn';
+import { Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+
 
 function OptionsBar() {
+    const theme = useTheme();
     const [activeKey, setActiveKey] = useState(null);
 
     const toggleActive = (key) => {
@@ -18,17 +19,25 @@ function OptionsBar() {
 
     return (
         <>
-            <Box className="Header SubHeader">
+            <Box 
+                className="flex flex-row items-center p-2 m-0 content-start" 
+                sx={{ backgroundColor: theme.palette.background.default, borderBottom: '1px solid #33333350', }}
+            >
                 {mainKeys.map(key => (
-                    <Box key={key} className="SubOptions" onClick={() => toggleActive(key)}>
-                        <Typography className="TextWithIcon">
-                            {key} <ToggleIcon
-                                isDown={activeKey === key}
-                                IconUp={ArrowDropDownIcon}
-                                IconDown={ArrowDropUpIcon}
-                                className="Icon"
-                            />
-                        </Typography>
+                    <Box 
+                        key={key} 
+                        sx={{ 
+                            flex: 1, 
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center' 
+                        }}
+                    >
+                        <PrimaryBtn
+                            content={key}
+                            isActive={activeKey === key}
+                            toggleActive={() => toggleActive(key)}
+                        />
                     </Box>
                 ))}
             </Box>

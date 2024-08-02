@@ -3,6 +3,7 @@ import Navbar from './components/UI/Navbar/navbar';
 import SearchBar from './components/UI/SearchBar/searchBar';
 import theme from './assets/styles/styles';
 import { ThemeProvider } from '@mui/material/styles';
+import './App.css';
 
 
 function App() {

@@ -31,24 +31,7 @@ const theme = createTheme({
         },
     },
     typography: {
-        h1: {
-            fontSize: "3rem",
-            fontWeight: 600,
-            fontFamily: fontTitle,
-        },
-        h2: {
-            fontSize: "1.75rem",
-            fontWeight: 600,
-            fontFamily: fontTitle,
-        },
-        h3: {
-            fontSize: "1.5rem",
-            fontWeight: 600,
-            fontFamily: fontTitle,
-        },
-        body1: {
-            fontFamily: fontText,
-        },
+        
     },
 });
   

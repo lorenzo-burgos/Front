@@ -1,35 +1,36 @@
 import React from 'react';
-import { Box, ListItem, Typography } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import { Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import SecondaryBtn from '../Buttons/SecondaryBtn';
 
 function SubOptionsBox({ options }) {
+    const theme = useTheme();
     const paddedOptions = options.map((opcao) => opcao);
 
     return (
-        <Box
-            sx={{
-                backgroundColor: 'rgba(33, 33, 33, 0.2)',
-                p: 2,
-                flexGrow: 1,
+        <Box 
+            className="flex flex-row items-center p-2 m-0 content-start" 
+            sx={{ 
+                backgroundColor: theme.palette.background.default, 
+                borderBottom: '1px solid #33333350',
             }}
         >
-            <Grid container spacing={1} justifyContent="center">
-                {paddedOptions.map((opcao, index) => (
-                    <Grid item key={index} xs sm display="flex" justifyContent="center">
-                        <ListItem
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                padding: '0 8px',
-                                fontWeight: '600',
-                                borderRadius: 1,
-                            }}
-                        >
-                            {opcao ? opcao : <Typography variant="body2">&nbsp;</Typography>}
-                        </ListItem>
-                    </Grid>
-                ))}
-            </Grid>
+            {paddedOptions.map((opcao, index) => (
+                <Box 
+                    key={index} 
+                    sx={{ 
+                        flex: '1 1 auto',
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        alignItems: 'center'
+                    }}
+                >
+                    <SecondaryBtn 
+                        content={opcao || "Default"}
+                        onClick={() => console.log(`Clicked: ${opcao}`)}
+                    />
+                </Box>
+            ))}
         </Box>
     );
 }

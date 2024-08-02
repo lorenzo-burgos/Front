@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Box, Button, List, ListItem, Typography } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import OptionsBar from '../OptionsBar/optionsBar';
+import { Box, List, ListItem, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import OptionsBar from '../OptionsBar/optionsBar';
+import PrimaryBtn from '../Buttons/PrimaryBtn';
+import SecondaryBtn from '../Buttons/SecondaryBtn';
 
 function Navbar() {
     const [isActive, setIsActive] = useState(false);
@@ -15,36 +15,30 @@ function Navbar() {
 
     return (
         <>
-            <Box component="header" className={" flex items-center justify-between p-2"} sx={{backgroundColor: theme.palette.background.default,}}>
-                <Box className="flex items-center">
+            <Box 
+                component="header" 
+                className="flex flex-row items-center p-1 m-0 content-start" 
+                sx={{ backgroundColor: theme.palette.background.default, borderBottom: '1px solid #33333350', }}
+            > 
+                <Box className="content-center flex-1 pl-1">
                     <img
                         src="earth-logo.png"
-                        alt="Earth Logo"
-                        className="h-6"
+                        alt='Earth Logo'
                     />
                 </Box>
-                <Box className="flex items-center">
+                <Box className="flex flex-row items-center justify-center flex-none">
                     <List className="flex flex-row p-0 m-0 list-none">
-                        <ListItem className="m-0">
-                            <Button
-                                variant="contained" 
-                                color="primary"
-                                onClick={toggleActive}
-                                endIcon={isActive ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-                            >
-                                <Typography variant="button">
-                                    Produtores
-                                </Typography>
-                            </Button>
+                        <ListItem className="m-0 flex flex-row">
+                            <PrimaryBtn 
+                                content="Produtores"
+                                isActive={isActive}
+                                toggleActive={toggleActive}
+                            />
                         </ListItem>
                         <ListItem className="m-0">
-                            <Button
-                                href="#home"
-                            >
-                                <Typography variant="button" >
-                                    Home
-                                </Typography>
-                            </Button>
+                            <SecondaryBtn 
+                                content="Home"
+                            />
                         </ListItem>
                     </List>
                 </Box>
