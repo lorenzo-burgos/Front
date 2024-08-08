@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 function SearchBarBox({ isCollapsed }) {
+    const theme = useTheme();
+
     return (
         <Box
             sx={{
@@ -9,10 +12,11 @@ function SearchBarBox({ isCollapsed }) {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                bgcolor: "#D8CEB9",
+                bgcolor: `${theme.palette.background.default}`,
+                borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                borderRight: `1px solid ${theme.palette.secondary.main}`,
                 width: isCollapsed ? 0 : 290,
-                height: '100vh',
-                transition: 'width 0.3s ease',
+                height: '100%',
             }}
         >
             <Typography>Opções</Typography>

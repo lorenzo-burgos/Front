@@ -17,10 +17,10 @@ function Navbar() {
         <>
             <Box 
                 component="header" 
-                className="flex flex-row items-center p-1 m-0 content-start" 
+                className="flex flex-row items-center p-0.5 m-0 content-start" 
                 sx={{ backgroundColor: theme.palette.background.default, borderBottom: '1px solid #33333350', }}
             > 
-                <Box className="content-center flex-1 pl-1">
+                <Box className="content-center flex-1 pl-1.5">
                     <img
                         src="earth-logo.png"
                         alt='Earth Logo'

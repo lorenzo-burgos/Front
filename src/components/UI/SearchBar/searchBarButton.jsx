@@ -3,8 +3,10 @@ import ZoomInSharpIcon from '@mui/icons-material/ZoomInSharp';
 import ZoomOutSharpIcon from '@mui/icons-material/ZoomOutSharp';
 import ToggleIcon from '../../../utils/ToggleIcon';
 import { Box } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 function SearchBarBtn({ onClick }) {
+    const theme = useTheme();
     const [isActive, setIsActive] = useState(false);
 
     const toggleActive = () => {
@@ -20,14 +22,26 @@ function SearchBarBtn({ onClick }) {
             sx={{
                 display: 'flex',
                 alignItems: 'center',
-                width: 50,
+                width: isActive ? 50 : 310,
                 height: 50,
-                borderBottomRightRadius: 5,
-                borderTopRightRadius: 5,
-                bgcolor: '#D8CEB9',
+                borderRadius: '0px 5px 5px 0px',
+                borderTop: `1px solid ${theme.palette.secondary.main}`,
+                borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                borderRight: `1px solid ${theme.palette.secondary.main}`,
+                bgcolor: isActive ? `${theme.palette.secondary.main}` : `${theme.palette.secondary.light}`,
+                '&:hover': {
+                    bgcolor: theme.palette.secondary.light,
+                },
+
+                position: 'relative',
             }}
         >
-            <ToggleIcon isDown={isActive} IconUp={ZoomOutSharpIcon} IconDown={ZoomInSharpIcon} style={{paddingLeft: "10px"}}/>
+            <ToggleIcon 
+                isDown={isActive} 
+                IconUp={ZoomOutSharpIcon} 
+                IconDown={ZoomInSharpIcon} 
+                style={{ marginLeft: 'auto', paddingRight: 12 }}
+            />
         </Box>
     );
 }

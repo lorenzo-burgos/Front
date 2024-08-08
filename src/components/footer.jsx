@@ -7,10 +7,13 @@ const Footer = () => {
             bgcolor="#444"
             py={2}
             textAlign="center"
+            height={38}
+            width={1}
             position="fixed"
             bottom={0}
-            left={0}
-            width={1}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
         >
             <Typography variant="caption" color="white">
                 Earth Brasil © - 2024

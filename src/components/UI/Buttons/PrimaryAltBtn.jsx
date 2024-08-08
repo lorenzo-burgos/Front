@@ -5,22 +5,14 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useTheme } from '@mui/material/styles';
 
-const PrimaryBtn = ({ content, isActive, toggleActive }) => {
+const AltBtn = ({ content, isActive, toggleActive }) => {
     const theme = useTheme();
-
-    const [isUp, setIsUp] = useState(false);
-    const handleClick = () => {
-        setIsUp(!isUp);
-    };
 
     return (
         <Button
-            variant="contained"
+            variant="text"
             color="primary"
-            onClick={() => {
-                toggleActive();
-                handleClick();
-            }}
+            onClick={toggleActive}
             endIcon={
                 <ToggleIcon
                     isDown={!isActive}
@@ -30,18 +22,23 @@ const PrimaryBtn = ({ content, isActive, toggleActive }) => {
             }
             sx={{
                 padding: '0px 8px',
-                border: isUp ? `1px solid ${theme.palette.primary.main}` : 'none',
-                bgcolor: isUp ? `${theme.palette.primary.light}` : `${theme.palette.primary.main}`,
+                border: `none`,
+                bgcolor: 'transparent',
                 '&:hover': {
-                    bgcolor: theme.palette.primary.light,
+                    bgcolor: 'transparent',
                 },
             }}
         >
-            <Typography variant="button">
+            <Typography
+                variant="button"
+                sx={{
+                    borderBottom: isActive ? `2px solid ${theme.palette.primary.main}` : 'none',
+                }}
+            >
                 {content}
             </Typography>
         </Button>
     );
 };
 
-export default PrimaryBtn;
+export default AltBtn;

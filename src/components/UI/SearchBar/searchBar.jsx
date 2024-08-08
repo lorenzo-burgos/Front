@@ -13,12 +13,16 @@ function SearchBar() {
     return (
         <Box 
             display="flex" 
-            height="100vh"
+            flexDirection="column"
+            paddingTop='.3rem'
+            paddingBottom='.3rem'
+            height='100%'
         >
-            <SearchBarBox isCollapsed={isCollapsed} />
             <SearchBarBtn onClick={handleClick} />
+            <SearchBarBox isCollapsed={isCollapsed} />
         </Box>
     );
 }
 
 export default SearchBar;
+

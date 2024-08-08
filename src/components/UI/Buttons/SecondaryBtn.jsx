@@ -12,7 +12,7 @@ const SecondaryBtn = ({ content, onClick }) => {
             onClick={onClick}
             sx={{
                 padding: '4px 8px',
-                border: `2px solid ${theme.palette.secondary.main}`,
+                border: `1px solid ${theme.palette.secondary.main}`,
                 '&:hover': {
                     bgcolor: theme.palette.secondary.light,
                 },

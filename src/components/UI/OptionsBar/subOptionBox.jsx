@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import SecondaryBtn from '../Buttons/SecondaryBtn';
+import SAltBtn from '../Buttons/SecondaryAltBtn';
 
 function SubOptionsBox({ options }) {
     const theme = useTheme();
@@ -9,7 +10,7 @@ function SubOptionsBox({ options }) {
 
     return (
         <Box 
-            className="flex flex-row items-center p-2 m-0 content-start" 
+            className="flex flex-row items-center p-0.5 m-0 content-start" 
             sx={{ 
                 backgroundColor: theme.palette.background.default, 
                 borderBottom: '1px solid #33333350',
@@ -25,7 +26,7 @@ function SubOptionsBox({ options }) {
                         alignItems: 'center'
                     }}
                 >
-                    <SecondaryBtn 
+                    <SAltBtn 
                         content={opcao || "Default"}
                         onClick={() => console.log(`Clicked: ${opcao}`)}
                     />
