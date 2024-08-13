@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import SearchBar from '../components/UI/SearchBar/searchBar';
 import Footer from '../components/footer';
+import Navbar from '../components/UI/Navbar/navbar';
 
 const ProdutorScreen = () => {
 
     return (
-        <Box height="auto">
+        <Box height="auto">    
+            <Box>
+                <Navbar />
+            </Box>
             <Box 
                 display="flex" 
                 flexDirection="row"
@@ -26,7 +30,9 @@ const ProdutorScreen = () => {
                     {/* Conteúdo aqui */}
                 </Box>
             </Box>
-            <Footer />
+            <Box>
+                <Footer />
+            </Box>
         </Box>
     );
 };
