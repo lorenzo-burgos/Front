@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Box, List, ListItem, } from '@mui/material';
+import { Box, List, ListItem } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import OptionsBar from '../OptionsBar/optionsBar';
 import PrimaryBtn from '../Buttons/PrimaryBtn';
 import SecondaryBtn from '../Buttons/SecondaryBtn';
 
-function Navbar() {
+function Navbar({ toggleOptionsBar, isOptionsBarActive, onToggleSubOptions }) {
     const [isActive, setIsActive] = useState(false);
     const theme = useTheme();
 
     const toggleActive = () => {
         setIsActive(!isActive);
+        toggleOptionsBar(!isOptionsBarActive);
     };
 
     return (
@@ -43,7 +44,7 @@ function Navbar() {
                     </List>
                 </Box>
             </Box>
-            {isActive && <OptionsBar />}
+            {isActive && <OptionsBar onToggleSubOptions={onToggleSubOptions} />}
         </>
     );
 }

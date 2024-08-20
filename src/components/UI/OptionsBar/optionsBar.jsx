@@ -5,12 +5,17 @@ import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import AltBtn from "../Buttons/PrimaryAltBtn";
 
-function OptionsBar() {
+function OptionsBar({ onToggleSubOptions }) {
     const theme = useTheme();
     const [activeKey, setActiveKey] = useState(null);
 
     const toggleActive = (key) => {
-        setActiveKey(activeKey === key ? null : key);
+        const newActiveKey = activeKey === key ? null : key;
+        setActiveKey(newActiveKey);
+
+        if (onToggleSubOptions) {
+            onToggleSubOptions(!!newActiveKey);
+        }
     }
 
     const produtorOptions = Produtor.produtorOptions;
@@ -49,3 +54,4 @@ function OptionsBar() {
 }
 
 export default OptionsBar;
+

@@ -17,8 +17,8 @@ export default function PasswordInput() {
   };
 
   return (
-    <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-      <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+    <FormControl sx={{ m: 1, width: '50ch' }} variant="outlined">
+      <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"
         type={showPassword ? 'text' : 'password'}
@@ -34,7 +34,7 @@ export default function PasswordInput() {
             </IconButton>
           </InputAdornment>
         }
-        label="Password"
+        label="Senha"
       />
     </FormControl>
   );
