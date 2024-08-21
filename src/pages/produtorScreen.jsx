@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import SearchBar from '../components/UI/SearchBar/searchBar';
 import Footer from '../components/footer';
 import Navbar from '../components/UI/Navbar/navbar';
+import ProducerTable from '../components/UI/Table/ProducerTable';
 
 const ProdutorScreen = () => {
     const [isOptionsBarActive, setIsOptionsBarActive] = useState(false);
@@ -41,7 +42,9 @@ const ProdutorScreen = () => {
                     display="flex" 
                     justifyContent="center"
                 >
-                    {/* Conteúdo aqui */}
+                    <Box height={isOptionsBarActive ? (isSubOptionsBarActive ? 'calc(100% - 4.8rem)' : 'calc(100% - 2.8rem)') : '100%'}>
+                        <ProducerTable />
+                    </Box>
                 </Box>
             </Box>
             <Box>
