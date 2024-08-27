@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Box } from '@mui/material';
-import SearchBar from '../components/UI/SearchBar/searchBar';
-import Footer from '../components/footer';
-import Navbar from '../components/UI/Navbar/navbar';
-import ProducerTable from '../components/UI/Table/ProducerTable';
+import { useState } from "react";
+import { Box } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import ProdutorColumn from "../../components/UI/Table/ProdutorColumn";
+import Navbar from '../../components/UI/Navbar/navbar';
+import SearchBar from '../../components/UI/SearchBar/searchBar';
+import Footer from '../../components/footer';
 
-const ProdutorScreen = () => {
+function ProdutorScreen() {
     const [isOptionsBarActive, setIsOptionsBarActive] = useState(false);
     const [isSubOptionsBarActive, setIsSubOptionsBarActive] = useState(false);
 
@@ -16,6 +17,8 @@ const ProdutorScreen = () => {
     const handleToggleSubOptions = (state) => {
         setIsSubOptionsBarActive(state);
     };
+
+    const theme = useTheme();
 
     return (
         <Box height="auto">    
@@ -42,8 +45,14 @@ const ProdutorScreen = () => {
                     display="flex" 
                     justifyContent="center"
                 >
-                    <Box height={isOptionsBarActive ? (isSubOptionsBarActive ? 'calc(100% - 4.8rem)' : 'calc(100% - 2.8rem)') : '100%'}>
-                        <ProducerTable />
+                    <Box height={isOptionsBarActive ? (isSubOptionsBarActive ? 'calc(100% - 4.8rem)' : 'calc(100% - 2.8rem)') : '100%' } 
+                        display="flex" 
+                        flexDirection="row" 
+                        gap="20px"
+                    >
+
+                        <ProdutorColumn title="Produtor" text="Texto do Produtor"  backgroundColor={theme.palette.primary.main} />
+                        <ProdutorColumn title="Fazenda" text="Texto da Fazenda"  backgroundColor={theme.palette.secondary.main}/>
                     </Box>
                 </Box>
             </Box>
@@ -52,6 +61,6 @@ const ProdutorScreen = () => {
             </Box>
         </Box>
     );
-};
+}
 
 export default ProdutorScreen;
