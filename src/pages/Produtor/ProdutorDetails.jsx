@@ -6,7 +6,7 @@ import Navbar from '../../components/UI/Navbar/navbar';
 import SearchBar from '../../components/UI/SearchBar/searchBar';
 import Footer from '../../components/footer';
 
-function ProdutorScreen() {
+function ProdutorDetail() {
     const [isOptionsBarActive, setIsOptionsBarActive] = useState(false);
     const [isSubOptionsBarActive, setIsSubOptionsBarActive] = useState(false);
 
@@ -51,8 +51,9 @@ function ProdutorScreen() {
                         gap="20px"
                     >
 
-                        <ProdutorColumn title="Produtor" text="Texto do Produtor"  backgroundColor={theme.palette.primary.main} />
-                        <ProdutorColumn title="Fazenda" text="Texto da Fazenda"  backgroundColor={theme.palette.secondary.main}/>
+                        <ProdutorColumn title="Produtor" text="Texto do Produtor"  backgroundColor={theme.palette.primary.light} />
+                        <ProdutorColumn title="Fazenda" text="Texto da Fazenda"  backgroundColor={theme.palette.secondary.light} />
+                        <ProdutorColumn title="Agregado(s)" text="Texto do(s) Agregado(s)"  backgroundColor={theme.palette.secondary.main} />
                     </Box>
                 </Box>
             </Box>
@@ -63,4 +64,4 @@ function ProdutorScreen() {
     );
 }
 
-export default ProdutorScreen;
+export default ProdutorDetail;
