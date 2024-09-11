@@ -12,7 +12,7 @@ function SubOptionsBox({ options }) {
         <Box 
             className="flex flex-row items-center p-0.5 m-0 content-start" 
             sx={{ 
-                backgroundColor: theme.palette.background.default, 
+                backgroundColor: 'transparent', 
                 borderBottom: '1px solid #33333350',
             }}
         >

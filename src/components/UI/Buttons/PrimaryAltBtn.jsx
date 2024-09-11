@@ -11,7 +11,6 @@ const AltBtn = ({ content, isActive, toggleActive }) => {
     return (
         <Button
             variant="text"
-            color="primary"
             onClick={toggleActive}
             endIcon={
                 <ToggleIcon
@@ -22,8 +21,9 @@ const AltBtn = ({ content, isActive, toggleActive }) => {
             }
             sx={{
                 padding: '0px 8px',
-                border: `none`,
-                bgcolor: 'transparent',
+                border: 'none',
+                bgcolor: 'transparent', 
+                color: 'white',
                 '&:hover': {
                     bgcolor: 'transparent',
                 },
@@ -33,6 +33,7 @@ const AltBtn = ({ content, isActive, toggleActive }) => {
                 variant="button"
                 sx={{
                     borderBottom: isActive ? `2px solid ${theme.palette.primary.main}` : 'none',
+                    color: 'white'
                 }}
             >
                 {content}

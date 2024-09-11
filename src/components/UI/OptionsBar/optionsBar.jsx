@@ -16,7 +16,7 @@ function OptionsBar({ onToggleSubOptions }) {
         if (onToggleSubOptions) {
             onToggleSubOptions(!!newActiveKey);
         }
-    }
+    };
 
     const produtorOptions = Produtor.produtorOptions;
     const mainKeys = Object.keys(produtorOptions);
@@ -25,7 +25,10 @@ function OptionsBar({ onToggleSubOptions }) {
         <>
             <Box 
                 className="flex flex-row items-center p-0.5 m-0 content-start" 
-                sx={{ backgroundColor: theme.palette.background.default, borderBottom: '1px solid #33333350' }}
+                sx={{ 
+                    backgroundColor: 'transparent', 
+                    borderBottom: '1px solid #33333350' 
+                }}
             >
                 {mainKeys.map(key => (
                     <Box 
@@ -54,4 +57,3 @@ function OptionsBar({ onToggleSubOptions }) {
 }
 
 export default OptionsBar;
-

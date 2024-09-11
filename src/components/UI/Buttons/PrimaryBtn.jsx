@@ -15,8 +15,7 @@ const PrimaryBtn = ({ content, isActive, toggleActive }) => {
 
     return (
         <Button
-            variant="contained"
-            color="primary"
+            variant="text"
             onClick={() => {
                 toggleActive();
                 handleClick();
@@ -31,13 +30,14 @@ const PrimaryBtn = ({ content, isActive, toggleActive }) => {
             sx={{
                 padding: '0px 8px',
                 border: isUp ? `1px solid ${theme.palette.primary.main}` : 'none',
-                bgcolor: isUp ? `${theme.palette.primary.light}` : `${theme.palette.primary.main}`,
+                bgcolor: 'transparent', 
+                color: theme.palette.primary.contrastText, 
                 '&:hover': {
-                    bgcolor: theme.palette.primary.light,
+                    bgcolor: 'transparent',
                 },
             }}
         >
-            <Typography variant="button">
+            <Typography variant="button" sx={{ color: 'white' }}>
                 {content}
             </Typography>
         </Button>

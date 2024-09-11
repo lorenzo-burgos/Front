@@ -23,7 +23,7 @@ export default function LoginBox() {
             <TextField
                 required
                 id="outlined"
-                label="Usuário"
+                label="Insira seu e-mail, CPF ou usuário"
                 defaultValue=""
                 InputLabelProps={{ 
                     required: false 

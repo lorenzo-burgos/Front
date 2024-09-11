@@ -17,7 +17,6 @@ function LoginScreen() {
                 display="flex" 
                 flexDirection="row"
                 height="calc(100vh - 7rem)"
-                paddingBottom=".3rem"
             >
                 <Box 
                     paddingTop="20px"

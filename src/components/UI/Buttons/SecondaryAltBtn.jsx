@@ -25,6 +25,9 @@ const SAltBtn = ({ content, onClick }) => {
         >
             <Typography
                 variant="button"
+                sx={{
+                    color: 'white', 
+                }}
             >
                 {content}
             </Typography>
