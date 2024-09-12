@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import LoginInput from '../components/Form/LoginInput';
+import RegistrationForm from "../components/Form/ResgisterForm";
 import Navbar from '../components/UI/Navbar/navbar';
 import Footer from '../components/footer';
 
@@ -18,17 +19,7 @@ function LoginScreen() {
                 flexDirection="row"
                 height="calc(100vh - 7rem)"
             >
-                <Box 
-                    paddingTop="20px"
-                    paddingLeft="20px"
-                    flexGrow={1}
-                    display="flex" 
-                    justifyContent="center"
-                    alignItems="center"
-                    bgcolor={theme.palette.background.default}
-                >
-                    <LoginInput />
-                </Box>
+                <RegistrationForm />
             </Box>
             <Box>
                 <Footer />

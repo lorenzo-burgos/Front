@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App h-screen w-screen relative overflow-hidden">   
         <Background />
-        <ProdutorScreen />
+        <LoginScreen />
       </div>
     </ThemeProvider>
   );
